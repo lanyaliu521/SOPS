@@ -1,0 +1,147 @@
+CREATE DATABASE SalesOrderSystem;
+
+USE [SalesOrderSystem]
+GO
+/****** Object:  Table [dbo].[Products]    Script Date: 2023/12/3 上午 06:11:50 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Products](
+	[ProductID] [int] IDENTITY(0,1) NOT NULL,
+	[Barcode] [nvarchar](100) NULL,
+	[ProductName] [nvarchar](100) NULL,
+	[Price] [decimal](4, 0) NOT NULL,
+	[Quantity] [int] NULL,
+	[SalesGrade] [nvarchar](10) NULL,
+	[CreateTime] [datetime] NOT NULL,
+ CONSTRAINT [PK__Products__B40CC6EDD38232BC] PRIMARY KEY CLUSTERED 
+(
+	[ProductID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Products] ON 
+INSERT [dbo].[Products] ([ProductID], [Barcode], [ProductName], [Price], [Quantity], [SalesGrade], [CreateTime]) VALUES (1, N'766345', N'麥香綠茶',CAST(10 AS Decimal(4, 0)), 3, N'C', CAST(N'2023-12-02T23:17:28.353' AS DateTime))
+INSERT [dbo].[Products] ([ProductID], [Barcode], [ProductName], [Price], [Quantity], [SalesGrade], [CreateTime]) VALUES (2, N'766346', N'麥香奶茶', CAST(10 AS Decimal(4, 0)), 39, N'A', CAST(N'2023-12-02T23:17:28.353' AS DateTime))
+INSERT [dbo].[Products] ([ProductID], [Barcode], [ProductName], [Price], [Quantity], [SalesGrade], [CreateTime]) VALUES (3, N'766347', N'麥香紅茶', CAST(10 AS Decimal(4, 0)), 5, N'B', CAST(N'2023-12-02T23:17:28.353' AS DateTime))
+INSERT [dbo].[Products] ([ProductID], [Barcode], [ProductName], [Price], [Quantity], [SalesGrade], [CreateTime]) VALUES (4, N'855234', N'伯朗咖啡', CAST(25 AS Decimal(4, 0)), 45, N'A', CAST(N'2023-12-02T23:17:28.353' AS DateTime))
+INSERT [dbo].[Products] ([ProductID], [Barcode], [ProductName], [Price], [Quantity], [SalesGrade], [CreateTime]) VALUES (5, N'855235', N'伯朗奶茶', CAST(30 AS Decimal(4, 0)), 1, N'C', CAST(N'2023-12-02T23:17:28.353' AS DateTime))
+INSERT [dbo].[Products] ([ProductID], [Barcode], [ProductName], [Price], [Quantity], [SalesGrade], [CreateTime]) VALUES (6, N'855236', N'伯朗拿鐵', CAST(30 AS Decimal(4, 0)), 16, N'B', CAST(N'2023-12-02T23:17:28.353' AS DateTime))
+INSERT [dbo].[Products] ([ProductID], [Barcode], [ProductName], [Price], [Quantity], [SalesGrade], [CreateTime]) VALUES (7, N'987263', N'阿里山高山茶', CAST(25 AS Decimal(4, 0)), 6, N'B', CAST(N'2023-12-02T23:17:28.353' AS DateTime))
+INSERT [dbo].[Products] ([ProductID], [Barcode], [ProductName], [Price], [Quantity], [SalesGrade], [CreateTime]) VALUES (8, N'987264', N'阿里山烏龍茶', CAST(25 AS Decimal(4, 0)), 6, N'C', CAST(N'2023-12-02T23:17:28.353' AS DateTime))
+INSERT [dbo].[Products] ([ProductID], [Barcode], [ProductName], [Price], [Quantity], [SalesGrade], [CreateTime]) VALUES (9, N'987265', N'阿里山冰茶', CAST(25 AS Decimal(4, 0)), 18, N'B', CAST(N'2023-12-02T23:17:28.353' AS DateTime))
+INSERT [dbo].[Products] ([ProductID], [Barcode], [ProductName], [Price], [Quantity], [SalesGrade], [CreateTime]) VALUES (10,N'012345', N'精選麥茶', CAST(20 AS Decimal(4, 0)), 8, N'C', CAST(N'2023-12-02T23:17:28.353' AS DateTime))
+INSERT [dbo].[Products] ([ProductID], [Barcode], [ProductName], [Price], [Quantity], [SalesGrade], [CreateTime]) VALUES (11, N'012346', N'精選綠茶', CAST(20 AS Decimal(4, 0)), 13, N'B', CAST(N'2023-12-02T23:17:28.353' AS DateTime))
+INSERT [dbo].[Products] ([ProductID], [Barcode], [ProductName], [Price], [Quantity], [SalesGrade], [CreateTime]) VALUES (12, N'012347', N'精選紅茶', CAST(20 AS Decimal(4, 0)), 9, N'B', CAST(N'2023-12-02T23:17:28.353' AS DateTime))
+INSERT [dbo].[Products] ([ProductID], [Barcode], [ProductName], [Price], [Quantity], [SalesGrade], [CreateTime]) VALUES (13, N'564738', N'拿鐵咖啡', CAST(35 AS Decimal(4, 0)), 8, N'C', CAST(N'2023-12-02T23:17:28.353' AS DateTime))
+INSERT [dbo].[Products] ([ProductID], [Barcode], [ProductName], [Price], [Quantity], [SalesGrade], [CreateTime]) VALUES (14, N'647382', N'抹茶拿鐵', CAST(35 AS Decimal(4, 0)), 2, N'C', CAST(N'2023-12-02T23:17:28.353' AS DateTime))
+INSERT [dbo].[Products] ([ProductID], [Barcode], [ProductName], [Price], [Quantity], [SalesGrade], [CreateTime]) VALUES (15, N'738264', N'珍珠奶茶', CAST(35 AS Decimal(4, 0)), 20, N'A', CAST(N'2023-12-02T23:17:28.353' AS DateTime))
+INSERT [dbo].[Products] ([ProductID], [Barcode], [ProductName], [Price], [Quantity], [SalesGrade], [CreateTime]) VALUES (16, N'123456', N'可樂', CAST(39 AS Decimal(4, 0)), 20, N'A', CAST(N'2023-12-02T23:17:28.353' AS DateTime))
+INSERT [dbo].[Products] ([ProductID], [Barcode], [ProductName], [Price], [Quantity], [SalesGrade], [CreateTime]) VALUES (17, N'123457', N'雪碧', CAST(39 AS Decimal(4, 0)), 43, N'A', CAST(N'2023-12-02T23:17:28.353' AS DateTime))
+INSERT [dbo].[Products] ([ProductID], [Barcode], [ProductName], [Price], [Quantity], [SalesGrade], [CreateTime]) VALUES (18, N'123458', N'檸檬紅茶', CAST(39 AS Decimal(4, 0)), 14, N'C', CAST(N'2023-12-02T23:17:28.353' AS DateTime))
+SET IDENTITY_INSERT [dbo].[Products] OFF
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [UQ__Products__177800D3B29F5C23]    Script Date: 2023/12/3 上午 06:11:50 ******/
+ALTER TABLE [dbo].[Products] ADD  CONSTRAINT [UQ__Products__177800D3B29F5C23] UNIQUE NONCLUSTERED 
+(
+	[Barcode] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Products] ADD  CONSTRAINT [DF_Products_CreateTime]  DEFAULT (getdate()) FOR [CreateTime]
+GO
+
+USE [SalesOrderSystem]
+GO
+/****** Object:  Table [dbo].[Employees]    Script Date: 2023/12/3 上午 06:11:50 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Employees](
+	[EmployeeID] [int] IDENTITY(999,-1) NOT NULL,
+	[EmployeeName] [nvarchar](100) NULL,
+	[Title] [nvarchar](50) NULL,
+	[Password] [varchar](4) NULL,
+	[CreateTime] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[EmployeeID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Employees] ON 
+
+
+INSERT [dbo].[Employees] ([EmployeeID], [EmployeeName], [Title], [Password], [CreateTime]) VALUES (997, N'王五', N'職員', N'3456', CAST(N'2023-12-03T06:07:02.467' AS DateTime))
+INSERT [dbo].[Employees] ([EmployeeID], [EmployeeName], [Title], [Password], [CreateTime]) VALUES (998, N'李四', N'職員', N'2345', CAST(N'2023-12-03T06:07:02.467' AS DateTime))
+INSERT [dbo].[Employees] ([EmployeeID], [EmployeeName], [Title], [Password], [CreateTime]) VALUES (999, N'張三', N'店長', N'1234', CAST(N'2023-12-03T06:07:02.467' AS DateTime))
+SET IDENTITY_INSERT [dbo].[Employees] OFF
+GO
+ALTER TABLE [dbo].[Employees] ADD  CONSTRAINT [DF_Employees_CreateTime]  DEFAULT (getdate()) FOR [CreateTime]
+GO
+
+USE [SalesOrderSystem]
+GO
+/****** Object:  Table [dbo].[Orders]    Script Date: 2023/12/3 上午 06:11:50 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Orders](
+	[OrderID] [int] NOT NULL,
+	[EmployeeID] [int] NULL,
+	[TotalAmount] [decimal](8, 0) NULL,
+	[OrderStatus] [tinyint] NULL,
+	[CreateTime] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[OrderID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+GO
+ALTER TABLE [dbo].[Orders] ADD  CONSTRAINT [DF_Orders_CreateTime]  DEFAULT (getdate()) FOR [CreateTime]
+GO
+ALTER TABLE [dbo].[Orders]  WITH CHECK ADD FOREIGN KEY([EmployeeID])
+REFERENCES [dbo].[Employees] ([EmployeeID])
+GO
+
+USE [SalesOrderSystem]
+GO
+/****** Object:  Table [dbo].[OrderDetails]    Script Date: 2023/12/3 上午 06:11:50 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[OrderDetails](
+	[OrderDetailID] [int] IDENTITY(1,1) NOT NULL,
+	[OrderID] [int] NULL,
+	[ProductID] [int] NULL,
+	[OrderQuantity] [int] NULL,
+	[CreateTime] [datetime] NOT NULL,
+ CONSTRAINT [PK__OrderDet__D3B9D30CED74C427] PRIMARY KEY CLUSTERED 
+(
+	[OrderDetailID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[OrderDetails] ON 
+
+SET IDENTITY_INSERT [dbo].[OrderDetails] OFF
+GO
+ALTER TABLE [dbo].[OrderDetails] ADD  CONSTRAINT [DF_OrderDetails_CreateTime]  DEFAULT (getdate()) FOR [CreateTime]
+GO
+ALTER TABLE [dbo].[OrderDetails]  WITH CHECK ADD  CONSTRAINT [FK__OrderDeta__Order__3F466844] FOREIGN KEY([OrderID])
+REFERENCES [dbo].[Orders] ([OrderID])
+GO
+ALTER TABLE [dbo].[OrderDetails] CHECK CONSTRAINT [FK__OrderDeta__Order__3F466844]
+GO
+ALTER TABLE [dbo].[OrderDetails]  WITH CHECK ADD  CONSTRAINT [FK__OrderDeta__Produ__403A8C7D] FOREIGN KEY([ProductID])
+REFERENCES [dbo].[Products] ([ProductID])
+GO
+ALTER TABLE [dbo].[OrderDetails] CHECK CONSTRAINT [FK__OrderDeta__Produ__403A8C7D]
+GO
